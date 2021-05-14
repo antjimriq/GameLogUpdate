@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Game Log</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_games_on_my_list">You dont have any games in your list right now</string>
+    <string name="no_games_in_game_list">You cannot select any games right now</string>
+    <string-array name="Status">
+        <item>Status</item>
+        <item>Plan to play</item>
+        <item>Playing</item>
+        <item>On Hold</item>
+        <item>Finished</item>
+    </string-array>
+    <string-array name="Mark">
+        <item>Mark</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="Platform">
+        <item>Platform</item>
+        <item>PC</item>
+        <item>PS1</item>
+    </string-array>
+</resources>

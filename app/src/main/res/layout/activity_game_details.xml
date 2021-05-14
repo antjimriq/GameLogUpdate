@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".main.GameDetailsActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/checkox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+            <CheckBox
+                android:id="@+id/ownership"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ownership"
+                android:onClick="CheckBoxClicked"/>
+            <CheckBox
+                android:id="@+id/physical_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Physical Copy"
+                android:onClick="CheckBoxClicked"/>
+            <CheckBox
+                android:id="@+id/digital_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Digital Copy"
+                android:onClick="CheckBoxClicked"/>
+            <CheckBox
+                android:id="@+id/collectors_edition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Collectors/Special Edition"
+                android:onClick="CheckBoxClicked"/>
+            <CheckBox
+                android:id="@+id/dlc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Extra/DLC"
+                android:onClick="CheckBoxClicked"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/checkox"
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/logoDetails"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            tools:src="@drawable/logo_super_mario"/>
+            <EditText
+                android:id="@+id/edit_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:text="Starting date"
+                android:focusable="false"
+                android:clickable="true" />
+        </LinearLayout>
+        <Spinner
+            android:id="@+id/game_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkox"/>
+        <LinearLayout
+            android:id="@+id/spinners"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="16dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/game_status">
+            <Spinner
+                android:id="@+id/mark"
+                android:layout_width="128dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="8dp"/>
+            <Spinner
+                android:id="@+id/platform"
+                android:layout_width="128dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+        <EditText
+            android:id="@+id/comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinners"
+            android:layout_margin="16dp"
+            android:hint="Extra comments"/>
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="256dp"
+            android:layout_height="64dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="64dp"
+            android:text="Save"
+            android:fontFamily=""
+            android:textSize="32dp"/>
+    </RelativeLayout>
+
+
+</layout>
