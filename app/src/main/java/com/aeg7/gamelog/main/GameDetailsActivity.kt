@@ -2,6 +2,8 @@ package com.aeg7.gamelog.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -105,9 +107,9 @@ class GameDetailsActivity : AppCompatActivity() {
 
 
 
-        findViewById<Button>(R.id.save_button).setOnClickListener{
+/*        findViewById<Button>(R.id.save_button_menu).setOnClickListener{
             saveData(game)
-        }
+        }*/
     }
 
     private fun showDatePickerDialog() {
@@ -157,7 +159,6 @@ class GameDetailsActivity : AppCompatActivity() {
         val intent= Intent(this, MyGamesListActivity::class.java)
         startActivity(intent)
 
-
     }
 
     fun CheckBoxClicked(view: View){
@@ -205,5 +206,25 @@ class GameDetailsActivity : AppCompatActivity() {
     fun showDatePicked(view: View){
         DatePicker().show(supportFragmentManager, "datePicker")
     }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.gamedetails_menu, menu)
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val itemId = item.itemId
+        if (itemId == R.id.mygames_menu) {
+            val intent= Intent(this, MyGamesListActivity::class.java)
+            startActivity(intent)
+        }
+        if(itemId == R.id.home_menu){
+            onResume()
+        }
+        if (itemId == R.id.save_button_menu){
+            val game = intent.extras?.getParcelable<Game>(GAME_KEY)
+            saveData(game)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 
 }
