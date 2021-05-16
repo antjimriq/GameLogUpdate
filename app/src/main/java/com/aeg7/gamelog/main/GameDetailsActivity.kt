@@ -27,6 +27,8 @@ class GameDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_details)
 
+        getWindow().getDecorView().setBackgroundColor(getResources().getColor(R.color.background_purple))
+
         //Recibimos el intent que se envia desde GameListMainActivity con la función openGameListDetailActivity
         val game = intent.extras?.getParcelable<Game>(GAME_KEY)
 
@@ -39,6 +41,8 @@ class GameDetailsActivity : AppCompatActivity() {
                 )
             )
         }
+        findViewById<TextView>(R.id.game_title).text = game?.name
+
 
 
         val status = resources.getStringArray(R.array.Status)
@@ -103,9 +107,6 @@ class GameDetailsActivity : AppCompatActivity() {
         if(game?.preferences?.date != ""){
             findViewById<EditText>(R.id.edit_date).setText(game?.preferences?.date)
         }
-
-
-
 
 /*        findViewById<Button>(R.id.save_button_menu).setOnClickListener{
             saveData(game)
@@ -217,7 +218,7 @@ class GameDetailsActivity : AppCompatActivity() {
             startActivity(intent)
         }
         if(itemId == R.id.home_menu){
-            onResume()
+            openMainActivity()
         }
         if (itemId == R.id.save_button_menu){
             val game = intent.extras?.getParcelable<Game>(GAME_KEY)
@@ -225,6 +226,9 @@ class GameDetailsActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
+    private fun openMainActivity(){
+        val intent=Intent(this, GameListMainActivity::class.java)
+        startActivity(intent)
+    }
 
 }

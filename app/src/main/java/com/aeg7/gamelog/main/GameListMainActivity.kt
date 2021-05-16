@@ -71,7 +71,7 @@ class GameListMainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         if(itemId == R.id.home_menu){
-            onResume()
+            openMainActivity()
         }
         return super.onOptionsItemSelected(item)
     }
@@ -79,6 +79,10 @@ class GameListMainActivity : AppCompatActivity() {
     private fun openGameListDetailActivity (game: Game){
         val intent=Intent(this, GameDetailsActivity::class.java)
         intent.putExtra(GameDetailsActivity.GAME_KEY,game)
+        startActivity(intent)
+    }
+    private fun openMainActivity(){
+        val intent=Intent(this, GameListMainActivity::class.java)
         startActivity(intent)
     }
 }
